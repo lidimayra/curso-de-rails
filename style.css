@@ -1,8 +1,12 @@
 .slide {
   background-image: url('pictures/logo.png');
   background-repeat: no-repeat;
-  background-position: 90% 90%;
+  background-position: 95% 95%;
   background-size: 20%;
+}
+
+.slide a {
+  background: none;
 }
 
 #cover {
@@ -34,4 +38,31 @@
 
 #cover img {
   opacity: 0.9;
+}
+
+img#rails_installer_logo {
+  height: 26px;
+  position: absolute;
+  bottom: 36.8%;
+  left: 17%;
+}
+
+img#prompt_ror {
+  width: 60%;
+}
+
+.slide.prompt {
+  padding-top: 50px;
+  background-color: black;
+  color: #FFF;
+  overflow: visible;
+}
+
+.slide.prompt pre code {
+  line-height: 1.4;
+  padding-left: 2px;
+}
+
+.slide.prompt pre code::before {
+  content: unset;
 }
