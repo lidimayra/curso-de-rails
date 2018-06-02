@@ -104,7 +104,7 @@
 
     <section class="slide">
       <h2>Prompt de Comando com Ruby e Rails</h2>
-      <img src="pictures/screenshots/prompt01.png" class='prompt_ror'>
+      <img src="pictures/screenshots/prompt01.png" class='screenshot'>
     </section>
 
     <section class="slide prompt">
@@ -172,7 +172,7 @@
 
     <section class="slide">
       <h2>Prompt de comando com Ruby e Rails</h2>
-      <img src="pictures/screenshots/prompt05.png" class="prompt_ror">
+      <img src="pictures/screenshots/prompt05.png" class="screenshot">
       <ul class="list-right">
         <li>Criação de aplicações</li>
         <li>Implementação de recursos</li>
@@ -186,7 +186,7 @@
     </section>
 
     <section class="slide">
-      <h2>Prompt de comando com Ruby e Rails</h2>
+      <h2>Listagem de arquivos</h2>
       <p>Para listar os arquivos existentes no diretório, utilizamos o comando <code>ls</code>:</p>
       <pre>
         <code>C:\Sites>ls</code>
@@ -198,7 +198,7 @@
     </section>
 
     <section class="slide">
-      <h2>Prompt de comando com Ruby e Rails</h2>
+      <h2>Navegando entre diretórios</h2>
       <p>
         Para mover para dentro de um diretório, utilizamos o comando
         <code>cd</code> (<i><strong>c</strong>hange <strong>d</strong>irectory</i>):
@@ -217,6 +217,94 @@
         Utilizem o comando de listagem para visualizar os arquivos contidos
         na aplicação demo. 💃
       </p>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Rodando a aplicação demo</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Gems</h2>
+      <ul>
+        <li>
+          Bibliotecas escritas em Ruby.
+        </li>
+        <li>
+          Definidas no arquivo <i>Gemfile</i>.
+        </li>
+      </ul>
+
+      <img src="pictures/screenshots/gemfile.png" class="screenshot">
+    </section>
+
+    <section class="slide">
+      <h2>Instalação das Gems</h2>
+        <p>
+          Para gerenciamento das gems, utilizamos uma ferramenta chamada
+          <a href="https://bundler.io/" target="_blank">Bundler</a> (já vem
+          instalada no kit do <i>RailsInstaller</i>).
+        <p>
+
+        <p>
+          Para instalar as gems definindas no <i>Gemfile</i>, basta executar
+          o comando <code>bundle install</code>.
+        </p>
+
+        <pre>
+          <code>C:\Sites\todo>bundle install</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Migrações</h2>
+      <ul>
+        <li>Funcionam como "versões" do banco de dados</li>
+        <li>
+           Precisamos rodar uma tarefa para que as migrações existentes
+           sejam executadas
+        </li>
+      </ul>
+
+      <p>
+        Para isso, utilizamos o comando <code>bundle exec rails db:migrate</code>
+      </p>
+
+      <pre>
+        <code>C:\Sites\todo>bundle exec rake db:migrate</code>
+      </pre>
+    </section>
+
+    <section class="slide prompt">
+      <pre>
+        <code>C:\Sites\todo>bundle exec rake db:migrate</code>
+        <code>[Simple Form] Simple Form is not configured in the</code>
+        <code>application and will use the default values. Use `rails</code>
+        <code>generate simple_form:install` to generate the Simple Form configuration.</code>
+        <code>= 20110607004915 CreateTasks: migrating ==============================</code>
+        <code>- create_table(:tasks)</code>
+        <code> -> 0.0035s</code>
+        <code>= 20110607004915 CreateTasks: migrated (0.0045s) =====================</code>
+        <code> </code>
+        <code>= 20110608232732 CreateLists: migrating ==============================</code>
+        <code>- create_table(:lists)</code>
+        <code> -> 0.0023s</code>
+        <code>= 20110608232732 CreateLists: migrated (0.0037s) =====================</code>
+        <code> </code>
+      </pre>
+    </section>
+
+      <section class="slide prompt">
+        <pre>
+          <code>= 20110608235829 AddListIdToTask: migrating ==========================</code>
+          <code>- add_column(:tasks, :list_id, :integer)</code>
+          <code> -> 0.0029s</code>
+          <code>= 20110608235829 AddListIdToTask: migrated (0.0040s) =================</code>
+          <code> </code>
+          <code>= 20110613204114 AddLists: migrating =================================</code>
+          <code>= 20110613204114 AddLists: migrated (0.0605s) ========================</code>
+          <code> </code>
+          <code>C:\Sites\todo></code>
+      </pre>
     </section>
 
     <footer class="badge">
