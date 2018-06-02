@@ -109,7 +109,7 @@ gulp.task('serve', () => {
 			baseDir: '.'
 		}
 	});
-	gulp.watch('index.html').on('change', () => {
+	gulp.watch('start_new_project.html').on('change', () => {
     	browserSync.reload();
 	});
 });
