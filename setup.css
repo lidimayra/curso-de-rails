@@ -1,0 +1,21 @@
+.slide.whoami ul {
+  padding-top: 8px;
+}
+
+div.whoami {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+}
+
+div.whoami p {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+img#rails_installer_logo {
+  height: 26px;
+  position: absolute;
+  bottom: 36.8%;
+  left: 17%;
+}
