@@ -77,4 +77,11 @@ ul.list-right {
   position: absolute;
   top: 30%;
   left: 64%;
+  padding-right: 16px;
+}
+
+img#mvc {
+  display: block;
+  margin: auto;
+  width: 90%;
 }

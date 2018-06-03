@@ -25,6 +25,11 @@
     </section>
 
     <section class="slide">
+      <h2>Padrão MVC</h2>
+      <img src="pictures/mvc.png" id="mvc">
+    </section>
+
+    <section class="slide">
       <h2>Retornando para o diretório anterior</h2>
         <p>
           Na etapa anterior, navegamos para dentro do diretório <i>todo</i>
@@ -59,6 +64,117 @@
 
       <pre class="next">
         <code>C:\Sites</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Iniciando um novo projeto Rails</h2>
+      <p>
+        Lembram das linhas de comando, que vimos listadas na
+        <a href="http://localhost:3000/#25">etapa anterior</a>? Agora
+        utilizaremos mais uma: <code>rails new &lt;nome_do_app&gt;</code>
+        inicializa um novo projeto. Vamos construir um blog:
+      </p>
+
+      <pre class="next">
+        <code>C:\Sites>rails new blog</code>
+      </pre>
+
+      <p class="next">
+        Depois de criado, naveguem para o novo diretório. Vamos começar a
+        trabalhar no nosso blog!
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Subindo o servidor Rails</h2>
+      <p>
+        Assim como fizemos com o nosso app demonstrativo, vamos executar
+        o comando para subir o servidor.
+      </p>
+
+      <pre>
+        <code>C:\Sites>rails server</code>
+      </pre>
+
+      <p class="next">
+        Após o subir o servidor, acessem a aplicação em
+        <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Yay!</h2>
+      <img src="pictures/screenshots/youre_on_rails.png" class="screenshot">
+      <ul class="list-right">
+        <li>Eba, temos uma aplicação rodando! 🍾</li>
+        <li>
+          Já podemos deixar a pasta do projeto aberta no editor de texto.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Um blog precisa de posts, certo?</h2>
+      <p>
+        Vamos pensar nos posts como um recurso do nosso projeto.
+      </p>
+
+      <p>
+        Queremos que estejam disponíveis em <code>/posts</code>, portanto
+        a primeira coisa que faremos é criar essa rota.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Configuração da rota</h2>
+      <p>
+        No editor de texto, abram o <code>config/routes.rb</code>.
+        Para adicionar as rotas padrão do Rails, usamos o método
+        <code>resources</code>, e passamos o nome do recurso como um símbolo
+        (usando sinal de <code>:</code> no início).
+      </p>
+
+      <pre>
+        <code>Rails.application.routes.draw do</code>
+        <code>  <span class="next"><mark>resources :posts</mark></span></code>
+        <code>end</code>
+      </pre>
+
+      <p class="next">
+        Agora acessem <a href="http://localhost:3000/posts" target="_blank">
+        http://localhost:3000/posts</a>. O que acontece?</p>
+    </section>
+
+    <section class="slide">
+      <h2>Ops!</h2>
+      <img src="pictures/screenshots/controller_missing.png" class="screenshot">
+      <ul class="list-right">
+        <li>Temos um exemplo de tela de erro do Rails.</li>
+        <li class="next">
+          A mensagem informa que o controller <i>PostsController</i> não
+          foi implementado.
+        </li>
+      </ul>
+
+      <p class="next note">Ótimo! Agora sabemos o que precisamos fazer!</li>
+    </section>
+
+    <section class="slide">
+      <h2>Criação do PostsController</h2>
+      <p>
+        Utilizaremos outra linha de comando:
+        <code>rails generate</code>.
+      </p>
+
+      <p>
+        Esta linha indica a chamada de <i>generators</i>.
+        <i>Generators</i> permitem que templates de código sejam
+        gerados automaticamente. Para gerar os templates de controller:
+      </p>
+
+      <pre>
+        <code>C:\Sites\blog>rails generate controller posts</code>
       </pre>
     </section>
 

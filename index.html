@@ -308,33 +308,48 @@
       <pre>
         <code>C:\Sites\todo>bundle exec rake db:migrate</code>
         <code>[Simple Form] Simple Form is not configured in the</code>
-        <code>application and will use the default values. Use `rails</code>
-        <code>generate simple_form:install` to generate the Simple Form configuration.</code>
-        <code>= 20110607004915 CreateTasks: migrating ==============================</code>
+        <code>application and will use the default values. Use `rails generate </code>
+        <code>simple_form:install` to generate the Simple Form configuration.</code>
+        <code>= 20110607004915 CreateTasks: migrating ===========================</code>
         <code>- create_table(:tasks)</code>
         <code> -> 0.0035s</code>
-        <code>= 20110607004915 CreateTasks: migrated (0.0045s) =====================</code>
+        <code>= 20110607004915 CreateTasks: migrated (0.0045s) ==================</code>
         <code> </code>
-        <code>= 20110608232732 CreateLists: migrating ==============================</code>
+        <code>= 20110608232732 CreateLists: migrating ===========================</code>
         <code>- create_table(:lists)</code>
         <code> -> 0.0023s</code>
-        <code>= 20110608232732 CreateLists: migrated (0.0037s) =====================</code>
+        <code>= 20110608232732 CreateLists: migrated (0.0037s) ==================</code>
         <code> </code>
       </pre>
     </section>
 
       <section class="slide prompt">
         <pre>
-          <code>= 20110608235829 AddListIdToTask: migrating ==========================</code>
+          <code>= 20110608235829 AddListIdToTask: migrating =======================</code>
           <code>- add_column(:tasks, :list_id, :integer)</code>
           <code> -> 0.0029s</code>
-          <code>= 20110608235829 AddListIdToTask: migrated (0.0040s) =================</code>
+          <code>= 20110608235829 AddListIdToTask: migrated (0.0040s) ==============</code>
           <code> </code>
-          <code>= 20110613204114 AddLists: migrating =================================</code>
-          <code>= 20110613204114 AddLists: migrated (0.0605s) ========================</code>
+          <code>= 20110613204114 AddLists: migrating ==============================</code>
+          <code>= 20110613204114 AddLists: migrated (0.0605s) =====================</code>
           <code> </code>
           <code>C:\Sites\todo></code>
       </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Linhas de Comando Rails</h2>
+      <p>
+        São utilizadas para gerenciar uma aplicação Rails a partir do prompt.
+        Ao longo do nosso curso, veremos alguns dos comandos básicos:
+      </p>
+
+      <ul>
+        <li>rails console</li>
+        <li>rails server</li>
+        <li>rails generate</li>
+        <li>rails new nome_do_app</li>
+      </ul>
     </section>
 
     <section class="slide">
@@ -369,7 +384,7 @@
 
       <p>
         Agora estamos prontas para partir para a segunda etapa, onde criaremos o
-        nosso próprio projeto! \o/
+        nosso próprio projeto! 🎉
       </p>
 
       <p>
