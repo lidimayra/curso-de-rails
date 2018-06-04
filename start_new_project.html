@@ -87,6 +87,32 @@
     </section>
 
     <section class="slide">
+      <h2>Um ajuste inicial 🚧</h2>
+      <p>
+        O projeto Rails, por padrão, traz uma gem chamada <i>coffee-script-source</i>.
+        As versões mais recentes dessa gem não funcionam bem no Windows. Por isso,
+        é necessário instalarmos uma versão mais antiga explicitamente para evitarmos
+        problemas na renderização das páginas.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Adição do coffee-script-source 1.8.0</h2>
+      <p>
+        Abram o arquivo <i>Gemfile.rb</i> e adicionem a linha marcada em amarelo:
+      </p>
+
+      <pre>
+        <code># Use CoffeeScript for .coffee assets and views</code>
+        <code><mark>gem 'coffee-script-source', '1.8.0'</mark></code>
+        <code>gem 'coffee-rails', '~ 4.2'</code>
+      </pre>
+
+      <p>E no terminal de comando executem:</p>
+      <code>C:\Sites\blog>bundle install</code>
+    </section>
+
+    <section class="slide">
       <h2>Subindo o servidor Rails</h2>
       <p>
         Assim como fizemos com o nosso app demonstrativo, vamos executar
@@ -143,7 +169,8 @@
 
       <p class="next">
         Agora acessem <a href="http://localhost:3000/posts" target="_blank">
-        http://localhost:3000/posts</a>. O que acontece?</p>
+        http://localhost:3000/posts</a>. O que acontece?
+      </p>
     </section>
 
     <section class="slide">
@@ -176,6 +203,15 @@
       <pre>
         <code>C:\Sites\blog>rails generate controller posts</code>
       </pre>
+
+      <p class="next">
+        Agora acessem <a href="http://localhost:3000/posts" target="_blank">
+        http://localhost:3000/posts</a>. O que acontece?
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2></h2>
     </section>
 
     <footer class="badge">
