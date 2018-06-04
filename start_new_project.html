@@ -58,13 +58,11 @@
         Logo, para navegar para o diretório anterior, devemos executar:
       </p>
 
-      <pre>
-        <code>C:\Sites\todo>cd ..</code>
-      </pre>
+      <code>C:\Sites\todo>cd ..</code>
 
-      <pre class="next">
+      <p class="next">
         <code>C:\Sites</code>
-      </pre>
+      </p>
     </section>
 
     <section class="slide">
@@ -76,9 +74,9 @@
         inicializa um novo projeto. Vamos construir um blog:
       </p>
 
-      <pre class="next">
+      <p class="next">
         <code>C:\Sites>rails new blog</code>
-      </pre>
+      </p>
 
       <p class="next">
         Depois de criado, naveguem para o novo diretório. Vamos começar a
@@ -99,17 +97,28 @@
     <section class="slide">
       <h2>Adição do coffee-script-source 1.8.0</h2>
       <p>
-        Abram o arquivo <i>Gemfile.rb</i> e adicionem a linha marcada em amarelo:
+        Abram o arquivo <i>Gemfile.rb</i> no editor de texto, localizem
+        o trecho abaixo.
       </p>
 
       <pre>
         <code># Use CoffeeScript for .coffee assets and views</code>
-        <code><mark>gem 'coffee-script-source', '1.8.0'</mark></code>
+        <code><mark class="next">gem 'coffee-script-source', '1.8.0'</mark></code>
         <code>gem 'coffee-rails', '~ 4.2'</code>
       </pre>
 
-      <p>E no terminal de comando executem:</p>
-      <code>C:\Sites\blog>bundle install</code>
+      <p class="next">Agora adicionem a linha marcada em amarelo! ☝️</p>
+    </section>
+
+    <section class="slide">
+      <h2>Atualização das gems seguindo o novo Gemfile</h2>
+      <p>Agora, no terminal de comando execute:</p>
+
+      <p>
+        <code>C:\Sites\blog>bundle update</code>
+      </p>
+
+      <p class="next">Após esse pequeno ajuste, podemos seguir com o start do projeto!</p>
     </section>
 
     <section class="slide">
@@ -119,12 +128,12 @@
         o comando para subir o servidor.
       </p>
 
-      <pre>
+      <p>
         <code>C:\Sites>rails server</code>
-      </pre>
+      </p>
 
       <p class="next">
-        Após o subir o servidor, acessem a aplicação em
+        Com o servidor em execução, acessem a aplicação em
         <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>.
       </p>
     </section>
@@ -200,9 +209,9 @@
         gerados automaticamente. Para gerar os templates de controller:
       </p>
 
-      <pre>
+      <p>
         <code>C:\Sites\blog>rails generate controller posts</code>
-      </pre>
+      </p>
 
       <p class="next">
         Agora acessem <a href="http://localhost:3000/posts" target="_blank">
@@ -211,7 +220,110 @@
     </section>
 
     <section class="slide">
-      <h2></h2>
+      <h2>Um novo erro: ação index não encontrada</h2>
+      <img src="pictures/screenshots/index_missing.png" class="screenshot">
+      <ul class="list-right">
+        <li>
+          Já se espera que <code>/posts</code> contenha uma lista de posts.
+        </li>
+
+        <li>
+          Chamamos esta ação que lista os recursos de <code>index</code>.
+        </li>
+
+        <li>
+          A mensagem informa que não temos uma <code>index</code> definida.
+        </li>
+      </ul>
+
+      <p class="next note">Vamos implementá-la!</p>
+    </section>
+
+    <section class="slide">
+      <h2>Implementação de index em PostsController</h2>
+      <p>
+        Em <code>app/controllers/posts_controller.rb</code>, insiram:
+      </p>
+
+      <pre>
+        <code>class PostsController < ApplicationController</code>
+        <code>  <mark>def index</mark> </code>
+        <code>    <mark>render plain: 'Blog Minas Programam'</mark></code>
+        <code>  <mark>end</mark></code>
+        <code>end</code>
+      </pre>
+
+      <p class="next">
+        Salvem o arquivo e acessem <a href="http://localhost:3000/posts" target="_blank">
+        http://localhost:3000/posts</a>.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Renderização de um texto simples</h2>
+      <img src="pictures/screenshots/render_plain.png" class="screenshot">
+      <ul class="list-right">
+        <li>Percebem as ações executadas pelo controller?</li>
+        <li class="next">Recebeu a solicitação de uma ação index</li>
+        <li class="next">Retornou o resultado a ser exibido.</li>
+        </li>
+      </ul>
+
+      <p class="note next">
+        Mas queremos renderizar páginas mais complexas do que texto puro, certo?
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Views: o V do MVC</h2>
+      <p>
+        Queremos construir páginas HTML que serão renderizadas quando
+        <code>/posts</code> for acessado. Vamos contruir um exemplo simples.
+        Abram um arquivo novo e repliquem o trecho abaixo:
+      </p>
+
+      <pre>
+        <code>&lt;html&gt;</code>
+        <code>&lt;center&gt;&lt;h2&gt;Blog Minas Programa&lt;/h2&gt;&lt;/center&gt;</code>
+        <code>&lt;/html&gt;</code>
+      </pre>
+
+      <p>Salvem esse arquivo em <code>app/views/posts/index.html</code></p>
+    </section>
+
+    <section class="slide">
+      <h2>Ajustando o controller</h2>
+      <p>
+        Agora precisamos ajustar o controller, pois não queremos mais renderizar
+        o texto puro, queremos que a view <code>index.html</code> seja exibida
+        no lugar.
+      </p>
+
+      <p>
+        Remova o código que foi adicionado no slide 15, mantendo apenas a definição
+        da classe <code>PostsController</code>.
+      </p>
+
+      <pre>
+        <code>class PostsController < ApplicationController</code>
+        <code>end</code>
+      </pre>
+
+      <p class="next">
+        Salvem o arquivo e acessem <a href="http://localhost:3000/posts" target="_blank">
+        http://localhost:3000/posts</a>.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Renderização de uma página HTML</h2>
+      <img src="pictures/screenshots/render_html.png" class="screenshot">
+      <ul class="list-right">
+        <li>
+          Percebam que o texto agora está sendo exibido centralizado
+          e em tamanho maior devido a formatação HTML.
+        </li>
+      </ul>
     </section>
 
     <footer class="badge">
