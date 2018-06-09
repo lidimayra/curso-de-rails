@@ -324,19 +324,6 @@
     </section>
 
     <section class="slide">
-      <h2>#TODO</h2>
-      <ul>
-        <li>Scaffold</li>
-        <li>ERB</li>
-        <li>Models</li>
-        <li>Validações</li>
-        <li>7 actions</li>
-        <li>Adição da chave ssh gerada pelo RailsInstaller à conta do GitHub</li>
-        <li>Deploy para o Heroku</li>
-      </ul>
-    </section>
-
-    <section class="slide">
       <h2>Scaffold</h2>
       Para gerar o Scaffold de um post contendo título e conteúdo:
       <p>
@@ -349,7 +336,38 @@
     </section>
 
     <section class="slide">
-      <img src="" class="screenshot">
+      <h2>Erro! Migrações pendentes</h2>
+      <img src="pictures/screenshots/scaffold_pending_migrations.png" class="screenshot">
+      <ul class="list-right">
+        <li>A estrutura do banco de dados foi alterada</li>
+        <li>Precisamos rodar as migrações</li>
+        <li>Vimos isso <a href="setup.html#22" target="_blank">antes</a>, lembram?</li>
+      </ul>
+
+      <p class="next">
+        <code>C:\Sites\blog>bundle exec rake db:migrate</code>
+      </p>
+
+      <p class="next">
+        Recarreguem a listagem de posts novamente.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Lista de posts</h2>
+      <img src="pictures/screenshots/scaffold_index.png" class="screenshot">
+      <ul class="list-right">
+        <li>Temos uma página de posts!!</li>
+        <li>Cliquem em <i>New post</i> para criar o primeiro post</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Trabalhando com os registros</h2>
+      <ul>
+        <li>Sintam-se à vontade para manusear as funcionalidades do projeto</li>
+        <li>Tentem visualizar, atualizar e remover registros.</li>
+      </ul>
     </section>
 
     <footer class="badge">
