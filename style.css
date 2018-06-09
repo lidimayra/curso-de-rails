@@ -20,6 +20,11 @@
   color: purple;
 }
 
+.slide::after {
+  background-image: url('pictures/ribbon.svg');
+  right: 5%;
+}
+
 #cover {
   background-image: None;
 }
