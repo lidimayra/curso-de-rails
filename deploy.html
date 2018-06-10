@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Minas Programam - Backend</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deploy.css">
+    <link rel="shortcut icon" href="pictures/icon.png">
+  </head>
+  <body class="shower list">
+
+    <header class="caption">
+      <h1>Minas Programam</h1>
+      <p>Back-end</p>
+    </header>
+
+    <section class="slide" id="cover">
+      <h2>Hospedagem da aplicação na nuvem</h2>
+      <p>Minas Programam: Curso de Back-end</p>
+      <figure>
+        <img class="cover" src="pictures/cover.png">
+      </figure>
+    </section>
+
+    <section class="slide">
+      <h2>Heroku</h2>
+      <p>
+        Acessem o site <a href="https://www.heroku.com/" target="_blank">heroku.com</a> e
+        cliquem no botão <i>Sign up for free</i>.
+      </p>
+      <img src="pictures/screenshots/heroku_home.png" class="screenshot">
+    </section>
+
+    <section class="slide">
+      <h2>Criação da conta</h2>
+      <p>Preencham o formulário de cadastro</p>
+
+      <img src="pictures/screenshots/heroku_sign_up.png" class="screenshot">
+    </section>
+
+    <section class="slide">
+      <h2>Ativação da conta</h2>
+      <ul>
+        <p>
+          O Heroku envia um e-mail contendo um link para ativação da conta. Ao
+          ativar, é necessário definir uma senha.
+        </p>
+      <ul>
+      <img src="pictures/screenshots/heroku_password_setup.png" class="screenshot">
+    </section>
+
+    <section class="slide">
+      <h2>Conta configurada!</h2>
+      <p>A tela de boas-vindas indica que a nova conta já está ativa e pronta para uso!</p>
+      <img src="pictures/screenshots/heroku_welcome.png" class="screenshot">
+    </section>
+
+    <section class="slide">
+      <h2>Download do Heroku CLI</h2>
+      <p>
+        Agora é necessário instalar o Heroku CLI para que possamos gerenciar o
+        app no Heroku direto do terminal.
+      <p>
+
+      <p>
+        Acessem <a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank">
+        este site</a> e façam o download do programa.
+      </p>
+
+      <p>Abram o arquivo para iniciar a instalação</p>
+    </section>
+
+    <section class="slide">
+      <h2>Instalação do Heroku CLI</h2>
+      <p></p>
+      <img src="pictures/screenshots/heroku_cli_install01.png">
+    </section>
+
+    <section class="slide">
+      <h2>Instalação do Heroku CLI</h2>
+      <p></p>
+      <img src="pictures/screenshots/heroku_cli_install02.png">
+    </section>
+
+    <section class="slide">
+      <h2>Instalação do Heroku CLI</h2>
+      <p></p>
+      <img src="pictures/screenshots/heroku_cli_install03.png">
+    </section>
+
+    <section class="slide">
+      <h2>Verificação do Heroku CLI instalado</h2>
+
+      <p>
+        Após concluir a instalação, é necessário abrir uma nova janela
+        do Prompt de Comando com Ruby e Rails para que seja possível
+        utilizar o Heroku CLI.
+      </p>
+
+      <p>
+        Se instalado corretamente, o comando abaixo informará a versão
+        em uso:
+      </p>
+
+      <p>
+      <code>C:\Sites><mark>heroku version</mark></code>
+      </p>
+      <p>
+        <code class="next">heroku/7.0.86 win32-x64 node-v10.1.0</code>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">
+        Configurando o Heroku
+      </h2>
+    </section>
+
+    <section class="slide prompt">
+      <pre>
+        <code> </code>
+        <code>C:\Sites\Blog>heroku login</code>
+        <span class="next">
+          <code>heroku: Enter your login credentials</code>
+          <code>Email: <span class="next">lidi.mayra@gmail.com</span></code>
+        </span>
+        <code class="next">Password: <span class="next">************</span></code>
+        <code class="next">Logged in as <span class="green">lidi.mayra@gmail.com</span></code>
+        </span>
+
+        <code> </code>
+        <code class="next">C:\Sites\blog>heroku keys:add</code>
+        <span class="next">
+          <code>Found an SSH public key at <span class="cyan">C:\Users\Lidiane\.ssh\id_rsa.pub</span></code>
+          <code><span class="green">?</span> Would you like to upload it to Heroku? <span class="next">Yes</span></code>
+        </span>
+        <span class="next">
+          <code>Uploading <span class="cyan">C:\Users\Lidiane\.ssh\id_rsa.pub</span> SSH key... done</code>
+          <code> </code>
+          <code>C:\Sites></code>
+        </span>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Troca do Banco de Dados</h2>
+      <p>
+        Por padrão, o projeto Rails vem configurado com o banco de dados <code>sqlite3</code>, que não é
+        suportado pelo Heroku.
+      </p>
+
+      <p>
+        Por este motivo, trocaremos o banco de produção para utilizar o <code>PostgreSQL</code> no lugar.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Adição da gem do PostrgreSQL em produção</h2>
+      <p>
+        Abram o arquivo <i>Gemfile</i> e identifiquem a seguinte linha: <code>gem 'sqlite3'</code>
+        <span class="next">Removam esta linha substituindo pelo trecho abaixo:</span>
+      </p>
+
+      <pre class="next">
+        <code>group :development, :test do</code>
+        <code>  gem 'sqlite3'</code>
+        <code>end</code>
+        <code>group :production do</code>
+        <code>  gem 'pg'</code>
+        <code>end</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Execução do bundle install</h2>
+      <p>Cada vez que o <i>Gemfile</i> é alterado, é necessário rodar o <code>budnle install</code></p>
+
+      <p>
+        <code>
+          C:\Sites\blog><mark>bundle install</mark>
+        </code>
+      </code>
+    </section>
+
+    <section class="slide">
+      <h2>Remoção do sqllite3 em produção</h2>
+      <p>
+        Abram o arquivo <i>database.yml</i> e identifiquem
+        o trecho correspondente às configurações do banco
+        de dados de <strong>produção</strong>:
+      </p>
+
+      <pre>
+        <code><mark>production:</mark></code>
+        <code>  &lt;&lt;: *default</code>
+        <code>  database: db/test.sqlite3</code>
+      </pre>
+
+      <p>
+        Estas 3 linhas devem ser removidas e substituídas
+        pelo trecho presente no slide seguinte.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Configuração do PostgreSQL em produção</h2>
+      <p>Configurações para o PostgreSQL</p>
+
+      <pre>
+        <code><mark>production:</mark></code>
+        <code>  adater: postgresql</code>
+        <code>  database: db/production.psql</code>
+        <code>  pool: 5</code>
+        <code>  timeout: 5000</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Adição do add-on do postgres no Heroku</h2>
+      <p>
+        Vamos adicionar o add-on que possibilitar o suporte do
+        PostgreSQL no Heroku:
+      </p>
+      <p>
+      <code>C:\Sites\blog><mark>heroku addons:create heroku-postgresql</mark></code>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Adição das alterações ao repositório git</h2>
+      <p>
+        Apenas as alterações presentes no repositorio git serão
+        enviadas ao Heroku. Devemos adicionar tudo que já fizemos
+        até o momento:
+      </p>
+
+      <pre>
+        <code>git add .</code>
+        <code>git commit -m 'Cadastro de posts'</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Envio das alterações para o Heroku:</h2>
+      <p>
+        Configuramos o banco de dados e adicionamos todos
+        os estados do projeto ao repositório git. Agora
+        vamos partir para o deploy (subir as alterações
+        para o Heroku):
+      </p>
+
+      <p>
+        <code>C:\Sites\blog><mark>heroku create</mark></code>
+      </p>
+      <p>
+        <code>C:\Sites\blog><mark>git push heroku master</mark></code>
+      </p>
+    </section>
+
+
+    <section class="slide">
+      <h2>Rodandos as migrações no Heroku</h2>
+
+      <p>
+        Assim como rodamos as migrações no ambiente de
+        desenvolvimento, também precisamos executar estar
+        etapa no ambiente de produção. Para isso, execute
+        o comando:
+      </p>
+
+      <p>
+        <code>C:\Sites\blog><mark>heroku run rails db:migrate</mark></code>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Conferindo a aplicação online</h2>
+      <p>
+        Para conferir a aplicação disponível na web, execute
+        o comando:
+      </p>
+
+      <p>
+      <code>C:\Sites\blog><mark>heroku open</mark></code>
+      </p>
+    </section>
+
+    <footer class="badge">
+      <a href="https://github.com/shower/shower">Powered by Shower</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="node_modules/shower-core/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+  </body>
+</html>
