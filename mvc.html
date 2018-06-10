@@ -49,12 +49,15 @@
     <section class="slide">
       <h2>Regras de negócios de Post</h2>
       <ul>
-        <li>Acessem o
-          <a href="http://localhost:3000/posts/new">
-            formulário para submissão de post</a>.
+        <li>
+          Acessem o <a href="http://localhost:3000/posts/new">formulário para submissão de post</a>.
         </li>
-        <li>Criem um post sem título e sem conteúdo</li>
-        <li class="next">Criamos um post que não é válido, não tem finalidade.</li>
+        <li>
+          Criem um post sem título e sem conteúdo
+        </li>
+        <li class="next">
+          Criamos um post que não é válido, não tem utilidade nenhuma.
+        </li>
         <li class="next">
           Queremos que <strong>todo post</strong> tenha título e conteúdo.
         </li>
@@ -199,15 +202,86 @@
 
       <pre class="posts-list">
         <code>&lt;% @posts.each do |post| %&gt;</code>
-        <code>    &lt;%= link_to post.titulo, post %&gt;</code>
-        <code>  &lt;p&gt;</code>
+        <code>    <mark>&lt;h2&gt;</mark>&lt;%= link_to post.titulo, post %&gt;<mark>&lt;h2&gt;</mark></code>
+        <code>  <mark>&lt;p&gt;</mark></code>
         <code>    &lt;%= post.conteudo %&gt;</code>
         <code>    &lt;%= link_to 'Edit', edit_post_path(post) %&gt;</code>
         <code>    &lt;%= link_to 'Destroy', post, method: :delete,</code>
         <code>      data: { confirm: 'Are you sure?' } %&gt;</code>
-        <code>  &lt;/p&gt;</code>
+        <code>  <mark>&lt;/p&gt;</mark></code>
         <code>&lt;% end %&gt;</code>
       </pre>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Controllers</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Controllers</h2>
+      <ul>
+        <li>
+          Recebem uma solicitação web e são os responsáveis por produzir
+          o resultado apropriado.
+        </li>
+
+        <li>
+          Na nossa view de index, estamos usando uma variável denominada
+          <code>@posts</code> para exibir os nossos dados.
+        </li>
+
+        <li>
+          A definição dessa variável é feita no controller!
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Definição de @posts</h2>
+      <p>
+        Abram o arquivo <i>app/controllers/posts_controller.rb</i> e identifiquem
+        a ação <code>index</code>.
+      </p>
+
+      <pre>
+        <code>def index</code>
+        <code>  @posts = Post.all</code>
+        <code>end</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Como a consulta de posts acontece</h2>
+      <p>
+        Quando definimos que <code>@posts</code> recebe o valor
+        de <code>Post.all</code>, o controller está "fazendo um pedido"
+        para o model <i>Post</i>, que significa: "Traga todos os registros
+        de post existentes no banco de dados"
+      </p>
+
+      <p>
+        Desta forma, os registros são retornados na mesma sequência em que
+        foram criados. Ou seja, do mais antigo para o mais novo.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Revertendo a sequência exibida</h2>
+      <p>
+        Em um blog é natural que esperemos a sequência reversa.
+        Queremos os posts mais novos sendo exibidos primeiro, certo?
+      </p>
+
+      <p>Vamos alterar a nossa ação index para isso:</p>
+
+      <pre>
+        <code>def index</code>
+        <code>  @posts = Post.all<mark class="next">.reverse</mark></code>
+        <code>end</code>
+      </pre>
+    </section>
+
+    <section class="slide">
     </section>
 
     <footer class="badge">
