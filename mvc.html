@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="deploy.css">
+    <link rel="stylesheet" href="mvc.css">
     <link rel="shortcut icon" href="pictures/icon.png">
   </head>
   <body class="shower list">
@@ -81,6 +81,135 @@
       </p>
     </section>
 
+    <section class="slide">
+      <h2 class="shout shrink">Views</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Views</h2>
+      <ul>
+        <li>Visualização da aplicação</li>
+        <li>Por padrão, o Rails utiliza arquivos <i>.html.erb</i></li>
+          <ul>
+            <li>
+              Estes arquivos permitem que o html receba trechos de código Ruby.
+            </li>
+
+            <li>
+              Para isso, utilizamos as tags
+              <code>&lt;% %&gt;</code> e <code>&lt;%= &gt;</code>.
+            </li>
+
+            <li>
+              <code>&lt;% %&gt;</code>: Executa um código Ruby sem exibir o resultado.
+            </li>
+
+            <li>
+              <code>&lt;% %&gt;</code>: Executa um código Ruby e exibe o resultado.
+            </li>
+          </ul>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Lista de posts</h2>
+      <ul>
+        <li>Abram o arquivo <i>app/views/posts/index.html.erb</i>.</li>
+        <li>
+          Comparem com o resultado que vemos ao acessar
+          <a href="http://localhost:3000/posts" target="_blank">a lista de posts</a>.
+        </li>
+        <li>Temos uma estrutura de tabela que segue o padrão fornecido pelo Rails.</li>
+        <li>Vamos customizar esta view para as nossas necessidades.</li>
+      </ul>
+    </section>
+
+
+    <section class="slide">
+      <h2>Remoção dos termos "título" e "conteúdo"</h2>
+      <p>
+        Estes termos são desnecessários no nosso blog. Deletem as linhas abaixo:
+      </p>
+
+      <pre>
+        <code>&lt;thead&gt;</code>
+        <code>  &lt;tr&gt;</code>
+        <code>    &lt;th&gt;Titulo&lt;/th&gt;</code>
+        <code>    &lt;th&gt;Conteudo&lt;/th&gt;</code>
+        <code>    &lt;th colspan="3"&gt;&lt;/th&gt;</code>
+        <code>  &lt;/tr&gt;</code>
+        <code>&lt;/thead&gt;</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Link para visualização</h2>
+      <p>
+        Cada um dos nossos posts possuem um link escrito <i>Show</i>,
+        que levam à visualização individual de cada post. Vamos disponibilizar
+        este link no título do post. Removam linha abaixo:
+      </p>
+
+      <pre>
+        <code>&lt;td&gt;&lt;%= link_to 'Show', post %&gt;&lt;/td&gt;</code>
+      </pre>
+
+      <p>E alterem a linha <code>&lt;%= post.titulo %&gt;</code> para:</p>
+      <pre>
+        <code>&lt;%= link_to post.titulo, post %&gt;</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Remoção da estrutura de tabela</h2>
+      <p>
+        A index padrão vem com essa estrutura de tabela, que é muito
+        útil para lidar com dados genéricos. No nosso blog, não precisamos
+        dela.
+      </p>
+
+      <p>
+        Removeremos então as tags <code>table</code>, <code>thead</code>, <code>tr</code> e <code>td</code>
+        da nossa view.
+      </p>
+
+      <p>Indentifiquem o trecho seguinte:</p>
+    </section>
+
+    <section class="slide">
+      <pre class="posts-list">
+        <code>&lt;table&gt;</code>
+        <code> &lt;tbody&gt;</code>
+        <code>   &lt;% @posts.each do |post| %&gt;</code>
+        <code>     &lt;tr&gt;</code>
+        <code>       &lt;td&gt;&lt;%= link_to post.titulo, post %&gt;&lt;/td&gt;</code>
+        <code>       &lt;td&gt;&lt;%= post.conteudo %&gt;&lt;/td&gt;</code>
+        <code>       &lt;td&gt;&lt;%= link_to 'Edit', edit_post_path(post) %&gt;&lt;/td&gt;</code>
+        <code>       &lt;td&gt;&lt;%= link_to 'Destroy', post, method: :delete,</code>
+        <code>         data: { confirm: 'Are you sure?' } %&gt;&lt;/td&gt;</code>
+        <code>     &lt;/tr&gt;</code>
+        <code>   &lt;% end %&gt;</code>
+        <code> &lt;/tbody&gt;</code>
+        <code>&lt;/table&gt;</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <p>Vamos alterá-lo para:</p>
+
+      <pre class="posts-list">
+        <code>&lt;% @posts.each do |post| %&gt;</code>
+        <code>    &lt;%= link_to post.titulo, post %&gt;</code>
+        <code>  &lt;p&gt;</code>
+        <code>    &lt;%= post.conteudo %&gt;</code>
+        <code>    &lt;%= link_to 'Edit', edit_post_path(post) %&gt;</code>
+        <code>    &lt;%= link_to 'Destroy', post, method: :delete,</code>
+        <code>      data: { confirm: 'Are you sure?' } %&gt;</code>
+        <code>  &lt;/p&gt;</code>
+        <code>&lt;% end %&gt;</code>
+      </pre>
+    </section>
+
     <footer class="badge">
       <a href="https://github.com/shower/shower">Powered by Shower</a>
     </footer>
@@ -89,6 +218,5 @@
 
     <script src="node_modules/shower-core/shower.min.js"></script>
     <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
-
   </body>
 </html>
