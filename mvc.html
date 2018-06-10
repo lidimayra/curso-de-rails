@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Minas Programam - Backend</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deploy.css">
+    <link rel="shortcut icon" href="pictures/icon.png">
+  </head>
+  <body class="shower list">
+
+    <header class="caption">
+      <h1>Minas Programam</h1>
+      <p>Back-end</p>
+    </header>
+
+    <section class="slide" id="cover">
+      <h2>Models, Views e Controllers</h2>
+      <p>Minas Programam: Curso de Back-end</p>
+      <figure>
+        <img class="cover" src="pictures/cover.png">
+      </figure>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Models</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Models</h2>
+      <ul>
+        <li>Representam as regras de negócio do projeto</li>
+        <li>Facilitam a criação de objetos que precisam ter seus dados persistidos</li>
+        <li>Em Rails utilizam nomes no singular, enquanto as tabelas correspondentes
+        utilizam nomes no plural</li>
+      </ul>
+
+      <i>app/models/post.rb</i>
+      <pre>
+        <code>class Post < ApplicationRecord</code>
+        <code>end</code>
+      </pre>
+    </section>
+
+
+    <section class="slide">
+      <h2>Regras de negócios de Post</h2>
+      <ul>
+        <li>Acessem o
+          <a href="http://localhost:3000/posts/new">
+            formulário para submissão de post</a>.
+        </li>
+        <li>Criem um post sem título e sem conteúdo</li>
+        <li class="next">Criamos um post que não é válido, não tem finalidade.</li>
+        <li class="next">
+          Queremos que <strong>todo post</strong> tenha título e conteúdo.
+        </li>
+        <li class="next">
+          Para definir essa regra de negócio, utilizamos <strong>validações</strong>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Validações no Model</h2>
+
+      <i>app/models/post.rb</i>
+      <pre>
+        <code>class Post < ApplicationRecord</code>
+        <code><span class="next">  <mark>validates :titulo, :conteudo, presence: true</mark></span></code>
+        <code>end</code>
+      <pre>
+
+      <p> </p>
+      <p class="next">Agora acessem o
+        <a href="http://localhost:3000/posts/new">
+          formulário</a> e submetam outro post sem título e/ou conteúdo.
+      </p>
+    </section>
+
+    <footer class="badge">
+      <a href="https://github.com/shower/shower">Powered by Shower</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="node_modules/shower-core/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+  </body>
+</html>
