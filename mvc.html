@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mvc.css">
     <link rel="shortcut icon" href="pictures/icon.png">
@@ -202,7 +203,7 @@
 
       <pre class="posts-list">
         <code>&lt;% @posts.each do |post| %&gt;</code>
-        <code>    <mark>&lt;h2&gt;</mark>&lt;%= link_to post.titulo, post %&gt;<mark>&lt;h2&gt;</mark></code>
+        <code>  <mark>&lt;h2&gt;</mark>&lt;%= link_to post.titulo, post %&gt;<mark>&lt;h2&gt;</mark></code>
         <code>  <mark>&lt;p&gt;</mark></code>
         <code>    &lt;%= post.conteudo %&gt;</code>
         <code>    &lt;%= link_to 'Edit', edit_post_path(post) %&gt;</code>
@@ -256,7 +257,7 @@
         Quando definimos que <code>@posts</code> recebe o valor
         de <code>Post.all</code>, o controller está "fazendo um pedido"
         para o model <i>Post</i>, que significa: "Traga todos os registros
-        de post existentes no banco de dados"
+        de post existentes no banco de dados".
       </p>
 
       <p>
@@ -284,6 +285,25 @@
     <section class="slide">
     </section>
 
+    <section class="slide">
+      <h2>Final da etapa de customização</h2>
+      <p>
+        Customizamos nosso projeto, aprendendendo a lidar com as camadas
+        do padrão MVC.
+      </p>
+
+      <p>
+        Partiremos para a última etapa, onde colocaremos o nosso blog
+        em produção!!
+      </p>
+      <p>
+        <a href="deploy.html">
+          <span class='fa fa-arrow-circle-right'></span>
+            Hospedagem da aplicação na nuvem
+        </a>
+      </p>
+    </section>
+
     <footer class="badge">
       <a href="https://github.com/shower/shower">Powered by Shower</a>
     </footer>
@@ -292,5 +312,3 @@
 
     <script src="node_modules/shower-core/shower.min.js"></script>
     <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
-  </body>
-</html>
