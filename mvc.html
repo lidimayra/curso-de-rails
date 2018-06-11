@@ -283,6 +283,89 @@
     </section>
 
     <section class="slide">
+      <h2>De onde vem as ações definidas no controller?</h2>
+      <p>
+        Cada vez que definimos uma recurso no arquivo de rotas,
+        utilizando o <code>resources</code> (como fizemos
+        <a href="start_new_project.html#12">aqui</a>, lembram?),
+        7 rotas padrão são geradas.
+      </p>
+
+      <p>
+        Cada rota é mapeada a uma ação no controller do mesmo recurso.
+        Confira as 7 ações definidas no nosso controller: <i>index</i>,
+        <i>show</i>, <i>new</i>, <i>edit</i>, <i>create</i>, <i>update</i>
+        e <i>destroy</i>.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Comportamento esperado de cada ação</h2>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><code>index</code></td>
+            <td>Exibe a lista dos recursos</td>
+          </tr>
+
+          <tr>
+            <td><code>new</code></td>
+            <td>Exibe o formulário para cadastro de um novo recurso</td>
+          </tr>
+
+          <tr>
+            <td><code>create</code></td>
+            <td>Salva um novo recurso</td>
+          </tr>
+
+          <tr>
+            <td><code>show</code></td>
+            <td>Exibe um recurso específico</td>
+          </tr>
+
+          <tr>
+            <td><code>edit</code></td>
+            <td>Exibe o formulário para editar um recurso específico</td>
+          </tr>
+
+          <tr>
+            <td><code>update</code></td>
+            <td>Atualiza um recurso específico</td>
+          </tr>
+
+          <tr>
+            <td><code>destroy</code></td>
+            <td>Deleta um recurso específico</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="slide">
+      <h2>Raiz do projeto</h2>
+      <p>Trabalhamos na página de posts, que é a página principal do blog.</p>
+      <p>
+        Para acessá-la, estamos visitando a url com o sufixo <code>/posts</code>
+      </p>
+      <p>
+        Podemos configurar a ação <code>index</code> do <code>PostsController</code>
+        para que se torne a página principal do projeto, de forma que a passagem
+        do sufixo <code>posts</code> não seja necessária.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Definição do index de posts como raiz</h2>
+      <p><i>config/routes.rb</i></p>
+      <pre>
+        <code>Rails.application.routes.draw do</code>
+        <code>  <mark class="next">root to: 'posts#index'</mark></code>
+        <code>  resources :posts</code>
+        <code>end</code>
+      </pre>
+
+      <p>Agora acessem <a href="http://localhost:3000">http://localhost:3000</a></p>
     </section>
 
     <section class="slide">
