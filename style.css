@@ -36,8 +36,8 @@
 #cover h2 {
   width: 80%;
   margin:30px auto 0 auto;
-  color:#00a18a;
-  background-color: rgb(150, 38, 143);
+  color:#000;
+  background-color: #fff;
   text-align:center;
   font-size:70px;
 }
@@ -47,7 +47,7 @@
   margin:1% 46% 0;
   text-align:center;
   color: rgb(150, 38, 143);
-  background-color:#00a18a;
+  background-color:#fff;
   font-style:italic;
   font-size:20px;
 }
