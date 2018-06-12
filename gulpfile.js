@@ -109,7 +109,7 @@ gulp.task('serve', () => {
 			baseDir: '.'
 		}
 	});
-	gulp.watch('mvc.html').on('change', () => {
+	gulp.watch('setup.html').on('change', () => {
     	browserSync.reload();
 	});
 });
