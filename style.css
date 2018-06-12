@@ -18,6 +18,7 @@
 
 .slide a:hover {
   color: purple;
+  text-decoration: none;
 }
 
 .slide::after {
