@@ -9,6 +9,7 @@
   background-repeat: no-repeat;
   background-position: 95% 95%;
   background-size: 20%;
+  padding: 106px 44px 0;
 }
 
 .slide a {
@@ -23,7 +24,15 @@
 
 .slide::after {
   background-image: url('pictures/ribbon.svg');
-  right: 5%;
+  right: 44px;
+}
+
+.slide pre code {
+  margin-left: -50px;
+}
+
+.slide li {
+  margin-left: 26px;
 }
 
 #cover {
@@ -55,7 +64,7 @@
 }
 
 img.screenshot {
-  width: 60%;
+  width: 494px;
   padding-bottom: 10px;
   border: 1px solid gray;
 }
@@ -79,7 +88,7 @@ img.screenshot {
 ul.list-right {
   position: absolute;
   top: 30%;
-  left: 64%;
+  left: 58%;
   padding-right: 16px;
 }
 
