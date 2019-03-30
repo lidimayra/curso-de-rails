@@ -1,10 +1,11 @@
-# Minas Programam - Curso de Backend
+# Ruby Empowers - Curso de Ruby on Rails
 
-O projeto [Minas Programam](http://minasprogramam.com/) organiza um espaço de formação para promover a inclusão de meninas e mulheres na tecnologia. O curso é ministrado apenas por mulheres e é dividido em diferentes tópicos.
+O curso [Ruby Empowers](https://blog.caiena.net/ruby-empowers/) é uma ação da
+[Caiena](https://blog.caiena.net/ruby-empowers/) focada em aumentar a
+representatividade feminina no ambiente de trabalho.
 
-O material presente neste repositório corresponde à apresentação do curso de back-end referente à edição do Minas Programam 2018.
-
-O resultado está disponível [aqui](https://lidi.netlify.com/).
+5 mulheres participarão de uma formação que acontecerá nos dias 20 e 27 de abril
+das 09:00 as 17:30 em Campinas.
 
 Conteúdo abordado:
   - Configurações iniciais
