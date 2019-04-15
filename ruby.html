@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ruby Empowers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="pictures/icon.png">
+  </head>
+  <body class="shower list">
+
+    <header class="caption">
+      <h1>Ruby Empowers</h1>
+      <p>Ruby Empowers</p>
+    </header>
+
+    <section class="slide" id="cover">
+      <center>
+        <h2>Ruby e orientação a objetos</h2>
+      </center>
+
+      <p>Ruby Empowers</p>
+
+      <figure>
+        <img class="cover" src="pictures/cover.png">
+      </figure>
+    </section>
+
+    <section class="slide">
+      <center>
+        <h2>Rails é difícil? Mágica?!</h2>
+      </center>
+
+      <figure class="next">
+        <img src="pictures/rails-is-hard.png">
+      </figure>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby</h2>
+
+      <ul>
+        <li>Tipos básicos</li>
+        <li class="next">Controladores de fluxo</li>
+        <li class="next">Blocos</li>
+        <li class="next">Classes</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby - Tipos básicos</h2>
+
+      <ul>
+        <li>String</li>
+        <li class="next">Integer/Float</li>
+        <li class="next">Array</li>
+        <li class="next">Symbol</li>
+        <li class="next">Hash</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby - String</h2>
+
+      <p>Normalmente criadas utilizando <code>"</code> ou <code>'</code></p>
+
+      <pre>
+        <code>
+  "Olá pessoal"
+  "Olá pessoal".reverse <span class="comment"># => "laossep álO"</span>
+  "Olá pessoal".split(' ') <span class="comment"># => ["Olá", "pessoal"]</span>
+  "Olá pessoal".gsub('Olá', 'Adeus') <span class="comment"># => "Adeus pessoal"</span>
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby - Integer/Float</h2>
+
+      <p>Representam números inteiros, ou decimais como <code>150</code> ou <code>9.99</code></p>
+
+      <pre>
+        <code>
+        10 + 5 <span class="comment"># => 15</span>
+        6.next <span class="comment"># => 7</span>
+        1.3.round <span class="comment"># => 1</span>
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby - Array</h2>
+
+      <p>São coleções ordenadas com qualquer tipo de objetos, normalmente criadas com <code>Array.new</code> ou <code>[]</code></p>
+
+      <pre>
+        <code>
+[15, "Hello", "Ruby"]
+[15, "Hello", "Ruby"].first <span class="comment"># => 15</span>
+["Ruby"].push("Rails") <span class="comment"># => ["Ruby", "Rails"]</span>
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby - Symbol</h2>
+
+      <p>Símbolos representam nomes dentro do interpretador, criados com <code>:</code>, ex: <code>:coelho</code></p>
+
+      <pre>
+        <code>
+        :caiena
+        :"caiena"
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby - Hash</h2>
+
+      <p>São dicionários, contendo chaves únicas e valores pode ser criado com <code>Hash.new</code> ou de forma implícita <code>{}</code></p>
+
+      <pre>
+        <code>
+notas = {}
+notas['Ana'] = 10
+puts notas <span class="comment"># => { "Ana" => 10 }</span>
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby - Controladores de fluxo</h2>
+
+
+      <ul>
+        <li>If else</li>
+        <li class="next">Unless</li>
+        <li class="next">While</li>
+        <li class="next">Case</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Ruby - Blocos</h2>
+
+      <p>Em ruby tudo é objeto (menos blocos)</p>
+      <p class="next">Trecho de código fechadas nas keywords <code>do/end</code> ou entre <code>{}</code></p>
+      <p class="next">Um bloco pode possuír zero ou mais argumentos, definidos entre <code>||</code></p>
+
+      <pre class="next">
+        <code>
+         ['a', 'b', 'c'].each do |letter|
+           puts letter
+         end
+        </code>
+      </pre>
+
+    </section>
+
+    <section class="slide">
+      <h2>Orientação a objetos</h2>
+
+      <blockquote class="next">
+        <p>Modelo de análise, projeto e programação de software baseado na composição e interação entre diversas unidades chamadas de 'objetos'. - Wikipedia</p>
+      </blockquote>
+
+      <ul>
+        <li class="next">Classes</li>
+        <li class="next">Mensagens</li>
+        <li class="next">Encapsulamento</li>
+        <li class="next">Herança</li>
+        <li class="next">Polimorfismo</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Classes e mensagens</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Encapsulamento</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Herança e polimorfismo</h2>
+    </section>
+
+    <footer class="badge">
+      <a href="https://github.com/shower/shower">Powered by Shower</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="node_modules/shower-core/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+  </body>
+</html>
