@@ -30,6 +30,137 @@
     </section>
 
     <section class="slide">
+      <h2 class="shout shrink">Rodando a aplicação demo</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Gems</h2>
+      <ul>
+        <li>
+          Bibliotecas escritas em Ruby.
+        </li>
+        <li>
+          Definidas no arquivo <i>Gemfile</i>.
+        </li>
+      </ul>
+
+      <img src="pictures/screenshots/gemfile.png" class="screenshot">
+    </section>
+
+    <section class="slide">
+      <h2>Instalação das Gems</h2>
+        <p>
+          Para gerenciamento das gems, utilizamos uma ferramenta chamada
+          <a href="https://bundler.io/" target="_blank">Bundler</a> (já vem
+          instalada no kit do <i>RailsInstaller</i>).
+        <p>
+
+        <p>
+          Para instalar as gems definidas no <i>Gemfile</i>, basta executar
+          o comando <code>bundle install</code>.
+        </p>
+
+        <p>
+          <code>C:\Sites\todo><mark>bundle install</mark></code>
+        </p>
+    </section>
+
+    <section class="slide">
+      <h2>Migrações</h2>
+      <ul>
+        <li>
+          Funcionam como "versões" do banco de dados
+        </li>
+        <li>
+           Precisamos rodar uma tarefa para que as migrações existentes
+           sejam executadas
+        </li>
+      </ul>
+
+      <p>
+        Para isso, utilizamos o comando <code>bundle exec rake db:migrate</code>
+      </p>
+
+      <p>
+        <code>C:\Sites\todo><mark>bundle exec rake db:migrate</mark></code>
+      </p>
+    </section>
+
+    <section class="slide prompt">
+      <pre>
+        <code>C:\Sites\todo>bundle exec rake db:migrate</code>
+        <code>[Simple Form] Simple Form is not configured in the</code>
+        <code>application and will use the default values. Use `rails generate </code>
+        <code>simple_form:install` to generate the Simple Form configuration.</code>
+        <code>= 20110607004915 CreateTasks: migrating ===========================</code>
+        <code>- create_table(:tasks)</code>
+        <code> -> 0.0035s</code>
+        <code>= 20110607004915 CreateTasks: migrated (0.0045s) ==================</code>
+        <code> </code>
+        <code>= 20110608232732 CreateLists: migrating ===========================</code>
+        <code>- create_table(:lists)</code>
+        <code> -> 0.0023s</code>
+        <code>= 20110608232732 CreateLists: migrated (0.0037s) ==================</code>
+        <code> </code>
+      </pre>
+    </section>
+
+      <section class="slide prompt">
+        <pre>
+          <code>= 20110608235829 AddListIdToTask: migrating =======================</code>
+          <code>- add_column(:tasks, :list_id, :integer)</code>
+          <code> -> 0.0029s</code>
+          <code>= 20110608235829 AddListIdToTask: migrated (0.0040s) ==============</code>
+          <code> </code>
+          <code>= 20110613204114 AddLists: migrating ==============================</code>
+          <code>= 20110613204114 AddLists: migrated (0.0605s) =====================</code>
+          <code> </code>
+          <code>C:\Sites\todo></code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Linhas de Comando Rails</h2>
+      <p>
+        São utilizadas para gerenciar uma aplicação Rails a partir do prompt.
+        Ao longo do nosso curso, veremos alguns dos comandos básicos:
+      </p>
+
+      <ul>
+        <li>rails server</li>
+        <li>rails generate</li>
+        <li>rails new nome_do_app</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Iniciando o servidor rails</h2>
+      <p>
+        Agora queremos acessar a nossa aplicação através de um navegador. Para isso,
+        utilizamos o comando <code>rails server</code>.
+      </p>
+
+      <p>
+        <code>C:\Sites\todo><mark>rails server</mark></code>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Conferindo a aplicação em funcionamento</h2>
+      <p>
+        Acesse
+        <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
+        no navegador.
+      </p>
+
+      <img src="pictures/screenshots/todo.png" class="screenshot">
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Criando um novo projeto</h2>
+    </section>
+
+    <section class="slide">
       <h2>Padrão MVC</h2>
       <img src="pictures/mvc.png" id="mvc">
     </section>

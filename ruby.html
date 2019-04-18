@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ruby.css">
     <link rel="shortcut icon" href="pictures/icon.png">
   </head>
   <body class="shower list">
@@ -31,12 +32,10 @@
 
     <section class="slide">
       <center>
-        <h2>Rails é difícil? Mágica?!</h2>
+        <h2>Rails é difícil! Mágica?!</h2>
       </center>
 
-      <figure class="next">
-        <img src="pictures/rails-is-hard.png">
-      </figure>
+        <img class="center-img" src="pictures/ruby/rails-is-hard.png">
     </section>
 
     <section class="slide">
@@ -67,14 +66,7 @@
 
       <p>Normalmente criadas utilizando <code>"</code> ou <code>'</code></p>
 
-      <pre>
-        <code>
-  "Olá pessoal"
-  "Olá pessoal".reverse <span class="comment"># => "laossep álO"</span>
-  "Olá pessoal".split(' ') <span class="comment"># => ["Olá", "pessoal"]</span>
-  "Olá pessoal".gsub('Olá', 'Adeus') <span class="comment"># => "Adeus pessoal"</span>
-        </code>
-      </pre>
+      <img class="next center-img" src="pictures/ruby/string.png">
     </section>
 
     <section class="slide">
@@ -82,13 +74,7 @@
 
       <p>Representam números inteiros, ou decimais como <code>150</code> ou <code>9.99</code></p>
 
-      <pre>
-        <code>
-        10 + 5 <span class="comment"># => 15</span>
-        6.next <span class="comment"># => 7</span>
-        1.3.round <span class="comment"># => 1</span>
-        </code>
-      </pre>
+      <img class="next center-img" src="pictures/ruby/integer.png">
     </section>
 
     <section class="slide">
@@ -96,13 +82,7 @@
 
       <p>São coleções ordenadas com qualquer tipo de objetos, normalmente criadas com <code>Array.new</code> ou <code>[]</code></p>
 
-      <pre>
-        <code>
-[15, "Hello", "Ruby"]
-[15, "Hello", "Ruby"].first <span class="comment"># => 15</span>
-["Ruby"].push("Rails") <span class="comment"># => ["Ruby", "Rails"]</span>
-        </code>
-      </pre>
+      <img class="next center-img" src="pictures/ruby/array.png">
     </section>
 
     <section class="slide">
@@ -110,12 +90,7 @@
 
       <p>Símbolos representam nomes dentro do interpretador, criados com <code>:</code>, ex: <code>:coelho</code></p>
 
-      <pre>
-        <code>
-        :caiena
-        :"caiena"
-        </code>
-      </pre>
+      <img class="next center-img" src="pictures/ruby/symbol.png">
     </section>
 
     <section class="slide">
@@ -123,13 +98,7 @@
 
       <p>São dicionários, contendo chaves únicas e valores pode ser criado com <code>Hash.new</code> ou de forma implícita <code>{}</code></p>
 
-      <pre>
-        <code>
-notas = {}
-notas['Ana'] = 10
-puts notas <span class="comment"># => { "Ana" => 10 }</span>
-        </code>
-      </pre>
+      <img class="next center-img" src="pictures/ruby/hash.png">
     </section>
 
     <section class="slide">
@@ -142,23 +111,20 @@ puts notas <span class="comment"># => { "Ana" => 10 }</span>
         <li class="next">While</li>
         <li class="next">Case</li>
       </ul>
+
+      <img class="next place" id="flow-control" src="pictures/ruby/if.png">
     </section>
 
     <section class="slide">
       <h2>Ruby - Blocos</h2>
 
-      <p>Em ruby tudo é objeto (menos blocos)</p>
-      <p class="next">Trecho de código fechadas nas keywords <code>do/end</code> ou entre <code>{}</code></p>
-      <p class="next">Um bloco pode possuír zero ou mais argumentos, definidos entre <code>||</code></p>
+      <p><strong>Em ruby tudo é objeto! <span class="next">(menos blocos!!!)</span></strong><br>
+        <span class="next">
+          Trecho de código fechadas nas keywords <code>do/end</code> ou entre <code>{}</code>. Um bloco pode possuír zero ou mais argumentos, definidos entre <code>||</code>
+        </span>
+      </p>
 
-      <pre class="next">
-        <code>
-         ['a', 'b', 'c'].each do |letter|
-           puts letter
-         end
-        </code>
-      </pre>
-
+      <img class="next" src="pictures/ruby/block.png">
     </section>
 
     <section class="slide">
@@ -179,14 +145,57 @@ puts notas <span class="comment"># => { "Ana" => 10 }</span>
 
     <section class="slide">
       <h2>Classes e mensagens</h2>
+      <p>
+        Em orientação a objetos, uma classe é uma descrição que abstrai um conjunto de objetos com características similares.
+      </p>
+
+      <img class="next place right bottom" src="pictures/ruby/class.png">
     </section>
 
     <section class="slide">
       <h2>Encapsulamento</h2>
+      <p>
+        O encapsulamento faz com que a detalhes internos de um objeto estejam ocultos do mundo exterior.
+      </p>
+
+      <img class="next place right bottom" src="pictures/ruby/encapsulation.png">
     </section>
 
     <section class="slide">
       <h2>Herança e polimorfismo</h2>
+      <p>
+        Permite que classes compartilhem seus atributos e métodos entre si.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Herança e polimorfismo</h2>
+      <img class="place bottom left" src="pictures/ruby/inheritance.png">
+      <img class="next place right" src="pictures/ruby/inheritance2.png">
+    </section>
+
+    <section class="slide">
+      <h2>Final da etapa de Ruby</h2>
+      <p>
+        Conseguimos entender  os principais conceitos de orientação a objetos e do estrutura do Ruby.
+      </p>
+      <p>
+        <a href="https://ruby-doc.org" target="_blank">
+          <span class='fa fa-arrow-circle-right'></span>
+            Documentação do Ruby (https://ruby-doc.org)
+        </a>
+      </p>
+
+      <p>
+        Agora estamos prontas para partir para a segunda etapa, iniciaremos o projeto de exemplo do Rails installer! 🎉
+      </p>
+
+      <p>
+        <a href="start_new_project.html">
+          <span class='fa fa-arrow-circle-right'></span>
+            O Ruby on Rails
+        </a>
+      </p>
     </section>
 
     <footer class="badge">
