@@ -1,0 +1,9 @@
+.center-img {
+  border: solid 5px #ececec;
+  display: block;
+  margin: 0 auto;
+}
+
+#flow-control {
+  margin: 70px 0 0 100px
+}
