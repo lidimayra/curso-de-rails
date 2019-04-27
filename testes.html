@@ -33,8 +33,8 @@
     <section class="slide">
       <h2>RSpec</h2>
       <p>
-        Para os testes automatizados, utilizaremos a gem <a 
-          href="https://rspec.info/">RSpec</a>.
+      Para os testes automatizados, utilizaremos a gem <a 
+             href="https://rspec.info/">RSpec</a>.
       </p>
 
       <p>Abram o arquivo <i>Gemfile</i> e façam a seguinte alteração:</p>
@@ -91,7 +91,7 @@
 
 
       <p>
-        <code>C:\Sites><mark>rails generate rspec:install</mark></code>
+      <code>C:\Sites><mark>rails generate rspec:install</mark></code>
       <p>
 
       <p>
@@ -125,7 +125,7 @@
 
       <p>
         Conforme fizemos <a
-        href="https://rubyempowers.netlify.com/mvc.html#5">antes</a> nosso
+             href="https://rubyempowers.netlify.com/mvc.html#5">antes</a> nosso
         model contém validação de presença de título e conteúdo, certo?
       </p>
 
@@ -164,7 +164,7 @@
         <code></code>
         <code>RSpec.describe Post, type: :model do</code>
         <code>  </code>
-        <code>  it { should validate_presence_of(:titulo) }</code>
+        <code>  <mark>it { should validate_presence_of(:titulo) }</mark></code>
         <code>end</code>
       </pre>
 
@@ -172,6 +172,49 @@
         Agora rodem os testes utilizando o comando <code>rspec</code> no
       terminal.
       </p>
+    </section>
+
+    <section class="slide">
+      <h2>Entendendo a ferramenta</h2>
+
+      <p>
+        Tentem comentar a validação no model de Post e rodar os testes
+        novamente. O que acontece?
+      </p>
+
+      <p>
+        Escrevam também os testes para a validação de conteúdo!
+      </p>
+      </section>
+
+      <section class="slide">
+        <h2>Alterando a exibição do título</h2>
+
+        <pre>
+          <code>class Post < ApplicationRecord</code>
+          <code>  validates :titulo, :conteudo, presence: true</code>
+          <code> </code>
+          <code>  <mark>def exibir_titulo</mark></code>
+          <code>    <mark>"::: #{titulo.capitalize} :::"</mark></code>
+          <code>  <mark>end</mark></code>
+          <code>end</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Teste da exibição</h2>
+
+      <pre>
+        <code>RSpec.describe Post, type: :model do</code>
+        <code>  it { should validate_presence_of(:titulo) }</code>
+        <code> </code>
+
+        <code>  it 'displays title' do</code>
+        <code>    post = Post.new(titulo: 'um novo post', conteudo: 'xpto')</code>
+        <code>    expect(post.exibir_titulo).to eq('::: Um novo post :::')</code>
+        <code>  end</code>
+        <code>end</code>
+      </pre>
     </section>
 
     <div class="progress"></div>
