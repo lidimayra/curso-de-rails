@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ruby Empowers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="setup.css">
+    <link rel="shortcut icon" href="pictures/icon.png">
+  </head>
+  <body class="shower list">
+
+    <header class="caption">
+      <h1>Ruby Empowers</h1>
+      <p>Ruby Empowers</p>
+    </header>
+
+    <section class="slide" id="cover">
+      <center>
+        <h2>Testes Automatizados</h2>
+      </center>
+
+      <p>Ruby Empowers</p>
+
+      <figure>
+        <img class="cover" src="pictures/cover.png">
+      </figure>
+    </section>
+
+    <section class="slide">
+      <h2>RSpec</h2>
+      <p>
+        Para os testes automatizados, utilizaremos a gem <a 
+          href="https://rspec.info/">RSpec</a>.
+      </p>
+
+      <p>Abram o arquivo <i>Gemfile</i> e façam a seguinte alteração:</p>
+
+      <pre>
+        <code>group :development, :test do</code>
+        <code>  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]</code>
+        <span class="next">
+          <code>  <mark>gem 'rspec-rails', '~> 3.8'</mark></code>
+          <code>  <mark>gem 'shoulda-matchers'</mark></code>
+        </span>
+        <code>end</code>
+      </pre>
+    </section>
+
+
+    <footer class="badge">
+      <a href="https://github.com/shower/shower">Powered by Shower</a>
+    </footer>
+
+    <section class="slide">
+      <h2>Instalação da nova gem</h2>
+      <p>
+        Dado que adicionamos uma nova gem ao Gemfile, precisamos atualizar
+        a instalação das nossas dependências.
+      </p>
+
+      <code>C:\Sites><mark>bundle install</mark></code>
+    </section>
+
+    <section class="slide">
+      <h2>Uso da ferramenta</h2>
+      <p>
+        Agora que o RSpec foi instalado, podemos utilizá-lo para executar a
+        suite de testes que escreveremos daqui pra frente.
+      </p>
+
+      <p>
+        Para isto, basta chamar o comando <code>rspec</code> no terminal.
+      </p>
+
+      <p>
+        Tentem rodá-lo agora e vejam o que acontece.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Gerando a estrutura dos testes</h2>
+      <p>
+        Há uma estrutura específica para rodarmos os nossos testes. Para que não
+        seja necessário construirmos esta estrutura na mão, podemos utilizar
+        mais um generator.
+      </p>
+
+
+      <p>
+        <code>C:\Sites><mark>rails generate rspec:install</mark></code>
+      <p>
+
+      <p>
+        Percebam que entre outras coisas, o gerador criou um diretório chamado
+        <code>rspec</code> na raiz do projeto. É dentro deste diretório que
+        nossos testes serão escritos.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Configuração no rails_helper </h2>
+      <p>Um pequeno ajuste no <i>rails_helper</i> para habilitar o
+      shoulda-matchers, uma gem que facilita a escrita dos nossos testes:</p>
+
+      <i>spec/rails_helper.rb</i>
+
+      <pre>
+      <code>Shoulda::Matchers.configure do |config|</code>
+      <code>  config.integrate do |with|</code>
+      <code>  with.test_framework :rspec</code>
+      <code>  with.library :rails</code>
+      <code>end</code>
+    </section>
+
+    <section class="slide">
+      <h2>Lembram das validações de Post?</h2>
+
+      <p>
+        Abram o arquivo <i>app/models/post.rb</i>.
+      </p>
+
+      <p>
+        Conforme fizemos <a
+        href="https://rubyempowers.netlify.com/mvc.html#5">antes</a> nosso
+        model contém validação de presença de título e conteúdo, certo?
+      </p>
+
+      <p>Agora criaremos os testes para este comportamento.</p>
+
+      <p>
+        <code class="next">
+          C:\Sites><mark>rails generate rspec:model post</mark>
+        </code>
+      </p>
+
+      <p class="next">
+        Este generator criou o arquivo <i>spec/models/post_spec.rb</i>. Abram
+        este arquivo.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Testando as validações de Post</h2>
+
+      <pre>
+        <code>require 'rails_helper'</code>
+        <code></code>
+        <code>RSpec.describe Post, type: :model do</code>
+        <code>  pending "add some examples to (or delete) #{__FILE__}"</code>
+        <code>  </code>
+        <code>end</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Testando as validações de Post</h2>
+
+      <pre>
+        <code>require 'rails_helper'</code>
+        <code></code>
+        <code>RSpec.describe Post, type: :model do</code>
+        <code>  </code>
+        <code>  it { should validate_presence_of(:titulo) }</code>
+        <code>end</code>
+      </pre>
+
+      <p>
+        Agora rodem os testes utilizando o comando <code>rspec</code> no
+      terminal.
+      </p>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="node_modules/shower-core/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+  </body>
+</html>
