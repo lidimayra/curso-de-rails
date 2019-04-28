@@ -62,7 +62,7 @@
         a instalação das nossas dependências.
       </p>
 
-      <code>C:\Sites><mark>bundle install</mark></code>
+      <code>C:\Sites\blog><mark>bundle install</mark></code>
     </section>
 
     <section class="slide">
@@ -91,7 +91,7 @@
 
 
       <p>
-      <code>C:\Sites><mark>rails generate rspec:install</mark></code>
+      <code>C:\Sites\blog><mark>rails generate rspec:install</mark></code>
       <p>
 
       <p>
@@ -103,16 +103,16 @@
 
     <section class="slide">
       <h2>Configuração no rails_helper </h2>
-      <p>Um pequeno ajuste no <i>rails_helper</i> para habilitar o
-      shoulda-matchers, uma gem que facilita a escrita dos nossos testes:</p>
+      <p>Precisamos habilitar o shoulda-matchers (facilita a escrita dos testes):</p>
 
       <i>spec/rails_helper.rb</i>
 
       <pre>
       <code>Shoulda::Matchers.configure do |config|</code>
       <code>  config.integrate do |with|</code>
-      <code>  with.test_framework :rspec</code>
-      <code>  with.library :rails</code>
+      <code>    with.test_framework :rspec</code>
+      <code>    with.library :rails</code>
+      <code>  end</code>
       <code>end</code>
     </section>
 
@@ -133,7 +133,7 @@
 
       <p>
         <code class="next">
-          C:\Sites><mark>rails generate rspec:model post</mark>
+          C:\Sites\blog><mark>rails generate rspec:model post</mark>
         </code>
       </p>
 
@@ -209,12 +209,43 @@
         <code>  it { should validate_presence_of(:titulo) }</code>
         <code> </code>
 
-        <code>  it 'displays title' do</code>
+        <code>  it 'displays formatted title' do</code>
         <code>    post = Post.new(titulo: 'um novo post', conteudo: 'xpto')</code>
         <code>    expect(post.exibir_titulo).to eq('::: Um novo post :::')</code>
         <code>  end</code>
         <code>end</code>
       </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Execução do teste da exibição</h2>
+      <p>
+        Agora rodem novamente o comando <code>rspec</code> a partir do terminal.
+      </p>
+
+      <p>
+        Nossos testes estão passando e o método <i>exibir_titulo</i> está
+        coberto pelo teste que acabamos de escrever.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Final da etapa de testes</h2>
+      <p>
+        Aprendemos a criar testes unitários. Agora o nosso model de Post está
+        devidamente testado.
+      </p>
+
+      <p>
+        Partiremos para a última etapa, onde colocaremos o nosso blog
+        em produção!!
+      </p>
+      <p>
+        <a href="deploy.html">
+          <span class='fa fa-arrow-circle-right'></span>
+            Hospedagem da aplicação na nuvem
+        </a>
+      </p>
     </section>
 
     <div class="progress"></div>

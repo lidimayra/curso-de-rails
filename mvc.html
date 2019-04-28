@@ -206,7 +206,7 @@
 
       <pre class="posts-list">
         <code>&lt;% @posts.each do |post| %&gt;</code>
-        <code>  <mark>&lt;h2&gt;</mark>&lt;%= link_to post.titulo, post %&gt;<mark>&lt;h2&gt;</mark></code>
+        <code>  <mark>&lt;h2&gt;</mark>&lt;%= link_to post.titulo, post %&gt;<mark>&lt;/h2&gt;</mark></code>
         <code>  <mark>&lt;p&gt;</mark></code>
         <code>    &lt;%= post.conteudo %&gt;</code>
         <code>    &lt;%= link_to 'Edit', edit_post_path(post) %&gt;</code>
@@ -379,13 +379,13 @@
       </p>
 
       <p>
-        Partiremos para a última etapa, onde colocaremos o nosso blog
-        em produção!!
+        Agora vamos aprender a escrever testes automatizados condizentes
+        com o nosso blog.
       </p>
       <p>
-        <a href="deploy.html">
+        <a href="testes.html">
           <span class='fa fa-arrow-circle-right'></span>
-            Hospedagem da aplicação na nuvem
+            Testes automatizados
         </a>
       </p>
     </section>
